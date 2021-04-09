@@ -12,7 +12,7 @@ export class ResourcePageComponent {
         level: null,
         file: null
     };
-    public markdownFile:string;
+    public resourceIdentifier:string;
     constructor(
         private activatedRoute: ActivatedRoute,
     ) {
@@ -20,6 +20,6 @@ export class ResourcePageComponent {
             let value = this.activatedRoute.snapshot.paramMap.get(name);
             if (value) this.params[name] = value;
         });
-        this.markdownFile = Object.values(this.params).join('/');
+        this.resourceIdentifier = Object.values(this.params).join('/');
     }
 }

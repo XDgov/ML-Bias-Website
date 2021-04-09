@@ -1,4 +1,5 @@
 export { BuildPageComponent } from './build/build.component';
+export { CaseStudiesPageComponent } from './case-studies/case-studies.component';
 export { ContributePageComponent } from './contribute/contribute.component';
 export { HomePageComponent } from './home/home.component';
 export { JourneyPageComponent } from './journey/journey.component';

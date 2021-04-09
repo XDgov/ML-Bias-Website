@@ -10,7 +10,7 @@ export class BuildPageComponent {
 	public thing:string;
 
 
-	public markdownFiles:string[] = [
+	public resourceIdentifiers:string[] = [
 		'Bias_Evaluation',
 		'DataTools',
 		'ModelChoice'

@@ -29,6 +29,7 @@ import { SurveyLearnComponent } from './components/survey/learn/learn.component'
 
 import {
 	BuildPageComponent,
+	CaseStudiesPageComponent,
 	ContributePageComponent,
 	LearnPageComponent,
 	ResourcePageComponent,
@@ -52,11 +53,12 @@ import {
 		NextIconComponent,
 		PrevComponent,
 		ResourceComponent,
-		SurveyPageComponent,
 		BuildPageComponent,
-		LearnPageComponent,
 		ContributePageComponent,
-		ResourcePageComponent
+		CaseStudiesPageComponent,
+		LearnPageComponent,
+		ResourcePageComponent,
+		SurveyPageComponent,
 	],
 	exports: [],
 	imports: [

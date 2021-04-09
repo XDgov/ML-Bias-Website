@@ -12,7 +12,7 @@ export class ResourcesComponent {
 	@Input() public surveyData: any;
 	public objectKeys = Object.keys;
 	public displayNames = this.survey.displayNames;
-	public markdownFiles:any = this.github.markdownFiles;
+	public resourceIdentifiers:any = this.github.resourceIdentifiers;
 
     constructor(
 		public survey: SurveyService,

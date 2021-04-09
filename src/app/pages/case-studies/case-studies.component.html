@@ -1,0 +1,63 @@
+<div class="container-fluid">
+	<div class="container d-none">
+		<!-- This is grid / col examples  -- feel free to delete -->
+		<div class="row d-none">
+			<!-- bootstrap row / cols -->
+			<div class="col-12">
+			</div>
+			<div class="col-4 border">1</div>
+			<div class="col-4 border">2</div>
+			<div class="col-4 border">3</div>
+		</div>
+		<div class="d-flex flex-row">
+			<!-- bootstrap flexbox utility classes in combo with col-sizes -->
+			<div class="col-4 border">1</div>
+			<div class="col-4 border">2</div>
+			<div class="col-4 border">3</div>
+		</div>
+	</div>
+	<!-- We can either hard code this, or put them into the github repo and call as we go the resources.
+	The app-resource element below is directly calling a markdown file url, and perhaps we
+	can hardcode in this fashion for now. -->
+	<div class="container padding-xl-top padding-lg-bottom">
+		<div class="row">
+			<div class="col-6 mb-5 theme-lightgreen">
+				<app-resource
+					[tags]="['foo', 'bar']"
+					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Readme.md">
+				</app-resource>
+			</div>
+			<div class="col-6 mb-5 theme-lightgreen">
+				<app-resource
+					[tags]="['foo', 'bar']"
+					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Readme.md">
+				</app-resource>
+			</div>
+			<div class="col-12 theme-lightgreen">
+				<app-resource
+					[list]="true"
+					title="Case Study Title"
+					[tags]="['foo', 'bar']"
+					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Surveys.md">
+				</app-resource>
+			</div>
+			<div class="col-12 theme-lightgreen">
+				<app-resource
+					[list]="true"
+					title="Case Study Title"
+					[tags]="['foo', 'bar']"
+					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Surveys.md">
+				</app-resource>
+			</div>
+			<div class="col-12 theme-lightgreen">
+				<app-resource
+					[list]="true"
+					title="Case Study Title"
+					[tags]="['foo', 'bar']"
+					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Surveys.md">
+				</app-resource>
+			</div>
+		</div>
+
+	</div>
+</div>

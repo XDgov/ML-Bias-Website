@@ -1,0 +1,18 @@
+@import "../../../styles/helpers";
+
+a, .mat-button {
+    font-family:$custom-font-body;
+
+	&.current {
+		span.text{
+			position:relative;
+
+			&:after {
+				content:"";
+				position:absolute;
+				top:0; right:0; bottom:calc(((#{'1em'} + #{$line-thickness * 1.25}) * -1)); left:0;
+				border-bottom:$line-thickness $color_green solid;
+			}
+		}
+	}
+}

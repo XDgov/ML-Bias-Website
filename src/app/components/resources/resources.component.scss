@@ -1,0 +1,52 @@
+@import "../../../styles/helpers";
+
+#resources {
+	.resource {
+		@extend .flex-column;
+		// @extend .col-md-6;
+		// @extend .col-lg-4;
+
+
+		//&.large { @extend .col-lg-8 }
+	}
+	.mat-card {
+		@extend .h-100;
+		@extend .d-flex;
+		@extend .flex-column;
+
+		.mat-card-header {
+			.mat-chip {
+				border-radius: $border-radius;
+				text-transform:uppercase;
+				font-weight:normal;
+			}
+		}
+	}
+}
+
+.offset-background {
+	position:relative;
+
+	> * { position:relative; z-index:1; }
+
+	&:before {
+		content:"";
+		position:absolute;
+		top:0; right:0; bottom:0; left:-150vw;
+		background-color:inherit;
+		z-index:0;
+		border:inherit;
+		border-radius:inherit;
+		box-shadow: inherit;
+	}
+}
+
+#survey-action-card {
+	.mat-chip-list .mat-chip:first-child {
+		@extend .offset-background;
+		&:before { z-index: -1;}
+	}
+	.mat-card {
+		@extend .offset-background;
+	}
+}

@@ -1,0 +1,148 @@
+@import 'helpers';
+@import '~@angular/material/theming';
+
+$theme-primary:	mat-palette($md-purple);
+$theme-accent:	mat-palette($md-green);
+$theme-warn:	mat-palette($md-pink);
+
+$color_primary:map-get($md-purple, 500);
+$color_accent:map-get($md-green, 500);
+$color_warn:map-get($md-pink, 500);
+
+$light-theme: mat-light-theme((
+	color: (
+		primary: $theme-primary,
+		accent: $theme-accent,
+		warn: $theme-warn,
+	)
+));
+$light-foreground: map-get($light-theme, foreground);
+$light-background: map-get($light-theme, background);
+
+$theme-background-light: (
+	status-bar:					map-get($light-background, status-bar),
+	app-bar:					map-get($light-background, app-bar),
+	background:				   	white,
+	hover:	 					white,
+	card:	   					map-get($light-background, card),
+	dialog:						map-get($light-background, dialog),
+	disabled-button:			map-get($light-background, disabled-button),
+	raised-button:				map-get($light-background, raised-button),
+	focused-button:				map-get($light-background, focused-button),
+	selected-button:			map-get($light-background, selected-button),
+	selected-disabled-button:	map-get($light-background, selected-disabled-button),
+	disabled-button-toggle:		map-get($light-background, disabled-button-toggle),
+	unselected-chip:			rgba(white, 0),
+	disabled-list-option:		map-get($light-background, disabled-list-option),
+	tooltip: 					map-get($light-background, tooltip),
+);
+$theme-foreground-light: (
+	base:				map-get($light-foreground, base),
+	divider:			map-get($md-purple, 500),
+	dividers:			map-get($md-purple, 500),
+	disabled:			map-get($light-foreground, disabled),
+	disabled-button:  	map-get($light-foreground, disabled-button),
+	disabled-text:		map-get($light-foreground, disabled-text),
+	elevation:			map-get($light-foreground, elevation),
+	hint-text:			map-get($light-foreground, hint-text),
+	secondary-text:		map-get($light-foreground, secondary-text),
+	icon:				$color_green,
+	icons:				$color_green,
+	text:				map-get($light-foreground, text),
+	slider-min:			map-get($light-foreground, slider-min),
+	slider-off:			map-get($light-foreground, slider-off),
+	slider-off-active:	map-get($light-foreground, slider-off-active),
+);
+
+.theme-light { @import "./themes/light"; }
+.theme-dark { @import "./themes/dark"; }
+.theme-medium { @import "./themes/medium"; }
+.theme-lightpink { @import "./themes/lightpink"; }
+.theme-lightgreen { @import "./themes/lightgreen"; }
+
+@import "./themes/typography";
+
+html, body {
+	margin:0; padding:0;
+	min-width:100vw; width:100vw;
+	min-height:100vh; height:100vh;
+}
+
+html {
+	font-size:10px;
+	body { max-width:100%; max-height:100%; }
+}
+
+html body .padding-lg-top  		{ padding-top:7rem }
+html body .padding-lg-right		{ padding-right:7rem }
+html body .padding-lg-bottom	{ padding-bottom:7rem }
+html body .padding-lg-left  	{ padding-left:7rem }
+
+html body .padding-xl-top  		{ padding-top:10rem }
+html body .padding-xl-right  	{ padding-right:10rem }
+html body .padding-xl-bottom  	{ padding-bottom:10rem }
+html body .padding-xl-left  	{ padding-left:10rem }
+
+@for $i from 1 to 100 {
+    .w-#{$i} { width: #{$i}#{'%'} }
+	.mw-#{$i} { width: #{$i}#{'%'} }
+    // @media only screen and (max-width: 400px) {
+    //     .w-sm-#{$i} { width: #{$i}#{'%'} }
+    // }
+    // @media only screen and (min-width:401px) and (max-width: 768px) {
+    //     .w-md-#{$i} { width: #{$i}#{'%'} }
+    // }
+    // @media only screen and (min-width: 769px) {
+    //     .w-lg-#{$i} { width: #{$i}#{'%'} }
+    // }
+}
+@import "decorations";
+html body {
+	.font-body { font-family: $custom-font-body; }
+	.font-accent { font-family: $custom-font-accent; font-weight:700; }
+	.theme-gradient { background-image: linear-gradient(to bottom right, map-get($md-pink, 500), map-get($md-green, 500)); }
+	.bg-dot-overlay {
+		position:relative;
+		&:before {
+			content: "";
+			position:absolute;
+			top:0; right:0; bottom:0; left:0;
+			z-index:0;
+			background: transparent;
+			background-image: radial-gradient(rgba(white, 0.12) 1px, transparent 0);
+			background-size: 4px 4px;
+		}
+	}
+	.bg-primary { background-color:$color_primary !important }
+	.text-primary { color: $color_primary !important }
+	.bg-accent { background-color:$color_accent !important }
+	.text-accent { color: $color_accent !important }
+	.bg-warn { background-color:$color_warn !important }
+	.text-warn { color: $color_warn !important }
+}
+
+@import "button";
+@import "card";
+@import "chip";
+@import "icon";
+@import "slider";
+@import "stepper";
+
+
+html body .mat-step-icon.mat-step-icon-state-edit,
+html body .mat-slider-thumb {
+	background-color:$color_pink;
+	&:before {
+		$color: rgba($color_pink, 0.23);
+		$border-width:0.42em;
+		$offset: $border-width * -1;
+		content:"";
+		box-sizing: content-box;
+		width:100%; height:100%;
+		position:absolute;
+		top:$offset; right:$offset; bottom:$offset; left:$offset;
+		background-color:$color;
+		border:$border-width $color solid;
+		border-radius:100%;
+	}
+}

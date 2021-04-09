@@ -1,0 +1,38 @@
+@import "../../../styles/helpers";
+
+:host {
+	// flex-grow:0;
+	// flex-shrink:1;
+
+	// display:block;
+	// border:10px purple solid;
+}
+
+.header {
+	position:relative;
+	background-image:url(/assets/pexels-adrien-olichon-2387793.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:center center;
+
+	> * {
+		position:relative;
+		z-index:1;
+	}
+
+	&:before, &:after {
+		content:"";
+		position:absolute;
+		top:0; right:0; bottom:0; left:0;
+	}
+	&:before {
+		@extend .purple_overlay;
+		z-index:0;
+	}
+	&:after {
+		background-image:url(/assets/header-pattern-1@2x.png);
+		background-size:auto 50%;
+		background-repeat:no-repeat;
+		background-position:95% 25%;
+	}
+}

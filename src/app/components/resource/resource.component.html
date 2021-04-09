@@ -1,0 +1,21 @@
+<ng-template #listTitle><h3 class="font-accent font-weight-bold">{{ title }}</h3></ng-template>
+<ng-template #cardTitle><h2><span class="mat-body-1">{{ title }}</span></h2></ng-template>
+<mat-card class="{{ classes.join(' ') }}">
+	<mat-card-header>
+        <mat-card-title *ngIf="title">
+            <ng-container *ngIf="!list; then cardTitle"></ng-container>
+        </mat-card-title>
+        <mat-chip-list aria-label="tags">
+            <mat-chip *ngFor="let tag of tags">{{tag}}</mat-chip>
+        </mat-chip-list>
+    </mat-card-header>
+    <mat-card-content>
+        <ng-container *ngIf="list; then listTitle"></ng-container>
+        <markdown *ngIf="markdownFile" (ready)="onReady()" src="{{github.entryPoints.raw}}{{markdownFile}}.md"></markdown>
+    </mat-card-content>
+    <mat-card-actions *ngIf="showActions" class="text-right">
+        <button *ngIf="markdownLink" mat-raised-button mat-stroked-button routerLink="/resource/{{markdownLink}}">
+            <span>Open Resource</span>
+		</button>
+    </mat-card-actions>
+</mat-card>

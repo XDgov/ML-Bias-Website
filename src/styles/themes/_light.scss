@@ -1,0 +1,8 @@
+@include angular-material-theme((
+	primary: $theme-primary,
+	accent: $theme-accent,
+	warn: $theme-warn,
+	is-dark: false,
+	foreground: $theme-foreground-light,
+	background: $theme-background-light,
+));

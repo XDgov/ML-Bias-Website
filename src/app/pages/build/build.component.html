@@ -1,0 +1,34 @@
+<ng-template>
+
+</ng-template>
+<mat-sidenav-container class="theme-medium overflow-hidden" autosize>
+	<mat-sidenav mode="side" opened class="mw-23">
+		<div class="p-3">
+			<h3>Where would you like to begin with your build?</h3>
+		</div>
+		<mat-action-list dense>
+			<button mat-list-item> Help me understand and evaluate my data.</button>
+			<button mat-list-item> Help me understand model selection. </button>
+			<button mat-list-item> Show me where I might find bias along the entire ML pipeline. </button>
+			<button mat-list-item> Help me make a buy/build decision.</button>
+			<button mat-list-item> Walk me through model deployment and beyond.</button>
+		  </mat-action-list>
+	</mat-sidenav>
+	<mat-sidenav-content class="mat-app-background">
+		<div class="overflow-auto">
+			<div class="row">
+				<div *ngFor="let filename of markdownFiles" class="resource list theme-lightgreen col-md-6 col-lg-4 mb-5">
+					<!--  -->
+					<app-resource
+						[tags]="['tag']"
+						markdownFile="Build/{{ survey.data.ai }}/{{thing}}_{{ filename }}"
+						title="Build/{{ survey.data.ai }}/{{thing}}_{{ filename }}">
+					</app-resource>
+				</div>
+			</div>
+			<div class="container">
+				<app-resources [surveyData]="survey.data"></app-resources>
+			</div>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,95 @@
+<section class="container-fluid">
+	<div class="container mat-app-background theme-light padding-lg-top pb-5">
+		<h1 class="text-center">
+			<span class="dec-line green top left offset-top">
+				Get Directed to Relevent Resources
+			</span>
+		</h1>
+	</div>
+</section>
+<section #helper class="container-fluid">
+    <div class="container mat-app-background theme-light">
+		<form *ngIf="formGroup.controls.intent" #form action="/{{formGroup.controls.intent.value}}" (ngSubmit)="form.submit()" method="GET" [formGroup]="formGroup">
+			<mat-form-field class="d-none">
+				<input matInput name="intent" id="intent" #intent formControlName="intent" type="text" required>
+				<input matInput name="ai" id="ai" #ai formControlName="ai" type="number" required>
+				<input matInput name="bias" id="bias" #bias formControlName="bias" type="number" required>
+			</mat-form-field>
+            <mat-horizontal-stepper [linear]="true" #stepper>
+				<ng-template matStepperIcon="edit"><mat-icon>check</mat-icon></ng-template>
+
+				<ng-template #submit>
+					<button type="submit" color="warn" mat-raised-button mat-flat-button matStepperNext>
+						<span>Next</span> <mat-icon color="accent" class="round thick-border">chevron_right</mat-icon>
+					</button>
+				</ng-template>
+				<ng-template #back>
+					<button type="button" mat-stroked-button mat-raised-button matStepperPrevious>
+						<mat-icon color="accent" class="round thick-border">chevron_left</mat-icon> <span>Back</span>
+					</button>
+				</ng-template>
+				<ng-template #next>
+					<button type="button" mat-raised-button mat-stroked-button matStepperNext>
+						<span>Next</span> <mat-icon color="accent" class="round thick-border">chevron_right</mat-icon>
+					</button>
+				</ng-template>
+				<mat-step label="Tell us about..." [stepControl]="formGroup.controls.intent">
+                    <h2 class="text-center">
+                        What brings you to the Toolkit?
+                    </h2>
+					<label class="d-block mat-h4 text-center">
+						I want to...
+					</label>
+					<div class="d-flex flex-row align-items-center mb-5">
+						<div class="flex-fill d-flex flex-column">
+							<mat-chip-list selectable="true" multiple="false" #intentSlider aria-label="" aria-orientation="vertical">
+								<mat-chip #learn="matChip" color="warn"
+									value="learn"
+									class="col justify-content-center border bg-white text-dark mat-stroked-button mat-raised-button"
+									[attr.selected]="(intent.value == 'learn') ? true : null"
+									(click)="setIntent(learn)">
+									Learn
+								</mat-chip>
+								<mat-chip #build="matChip" color="warn"
+									value="build"
+									class="col justify-content-center border bg-white text-dark mat-stroked-button mat-raised-button"
+									[attr.selected]="(intent.value == 'build') ? true : null"
+									(click)="setIntent(build)">
+									Build
+								</mat-chip>
+								<mat-chip #contribute="matChip" color="warn"
+									value="contribute"
+									class="col justify-content-center border bg-white text-dark mat-stroked-button mat-raised-button"
+									[attr.selected]="(intent.value == 'contribute') ? true : null"
+									(click)="setIntent(contribute);">
+									Contribute
+								</mat-chip>
+							</mat-chip-list>
+						</div>
+					</div>
+                    <div class="d-flex flex-row flex-nowrap justify-content-end">
+						<ng-container *ngIf="next; then next"></ng-container>
+                    </div>
+                </mat-step>
+				<mat-step  label="AI/ML"  [stepControl]="formGroup.controls.ai">
+					<app-survey-learn step="ai" (valueChanged)="ai.value = $event.toString()"></app-survey-learn>
+					<div class="d-flex flex-row flex-nowrap justify-content-between">
+						<ng-container *ngIf="back; then back"></ng-container>
+						<ng-container *ngIf="next; then next"></ng-container>
+					</div>
+				</mat-step>
+				<mat-step label="ML Ethics"  [stepControl]="formGroup.controls.bias">
+					<app-survey-learn step="bias" (valueChanged)="bias.value = $event.toString()"></app-survey-learn>
+					<div class="d-flex flex-row flex-nowrap justify-content-between">
+						<ng-container *ngIf="back; then back"></ng-container>
+						<ng-container *ngIf="submit; then submit"></ng-container>
+						<!-- <ng-container *ngIf="(intent.value === 'build'); then next"></ng-container> -->
+					</div>
+				</mat-step>
+				<!-- <mat-step *ngIf="intent.value === 'build'" label="Build">
+					<app-build></app-build>
+                </mat-step> -->
+            </mat-horizontal-stepper>
+        </form>
+    </div>
+</section>

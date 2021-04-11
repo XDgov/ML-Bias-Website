@@ -1,27 +1,7 @@
 <div class="container-fluid">
-	<div class="container d-none">
-		<!-- This is grid / col examples  -- feel free to delete -->
-		<div class="row d-none">
-			<!-- bootstrap row / cols -->
-			<div class="col-12">
-			</div>
-			<div class="col-4 border">1</div>
-			<div class="col-4 border">2</div>
-			<div class="col-4 border">3</div>
-		</div>
-		<div class="d-flex flex-row">
-			<!-- bootstrap flexbox utility classes in combo with col-sizes -->
-			<div class="col-4 border">1</div>
-			<div class="col-4 border">2</div>
-			<div class="col-4 border">3</div>
-		</div>
-	</div>
-	<!-- We can either hard code this, or put them into the github repo and call as we go the resources.
-	The app-resource element below is directly calling a markdown file url, and perhaps we
-	can hardcode in this fashion for now. -->
-	<div class="container padding-xl-top padding-lg-bottom">
+	<div class="resources-list container padding-xl-top padding-lg-bottom">
 		<div class="row">
-			<div class="col-6 mb-5 theme-lightpink offset-background h-100">
+			<div class="resource action theme-lightpink offset-background col-md-6 col-lg-4 mb-5">
 				<app-resource
 					[tags]="['New!']"
                     resourceLink="/case-studies/Readme"
@@ -29,33 +9,30 @@
                     [showActions]="false">
 				</app-resource>
 			</div>
-			<div class="col-6 mb-5 theme-lightgreen h-100">
+			<div class="resource highlight col-md-6 col-lg-8 mb-5 theme-lightgreen">
                 <app-resource
+					title="Census Web"
 					[tags]="['foo', 'bar']"
-                    title="Census Web"
-                    resourceLink="/case-studies/CensusWeb"
-                    resourceIdentifier="Case%20Studies/CensusWeb">
+                    resourceLink="/case-studies/CensusWeb">
 				</app-resource>
 			</div>
-			<div class="col-12 theme-lightgreen">
+			<div class="resource list theme-lightgreen col-12">
                 <app-resource
 					[list]="true"
 					title="Computer Vision"
 					[tags]="['foo', 'bar']"
-                    resourceLink="/case-studies/ComputerVision"
-                    resourceIdentifier="Case%20Studies/ComputerVision">
+                    resourceLink="/case-studies/ComputerVision">
 				</app-resource>
 			</div>
-			<div class="col-12 theme-lightgreen">
+			<div class="resource list theme-lightgreen col-12">
 				<app-resource
 					[list]="true"
 					title="NIHCase"
 					[tags]="['foo', 'bar']"
-                    resourceLink="/case-studies/NIHCase"
-                    resourceIdentifier="Case%20Studies/NIHCase">
+                    resourceLink="/case-studies/NIHCase">
 				</app-resource>
 			</div>
-			<div class="col-12 theme-lightgreen">
+			<div class="resource list theme-lightgreen col-12">
 				<app-resource
 					[list]="true"
 					title="Surveys"

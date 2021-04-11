@@ -22,31 +22,14 @@
 			}
 		}
 	}
-}
 
-.offset-background {
-	position:relative;
-
-	> * { position:relative; z-index:1; }
-
-	&:before {
-		content:"";
-		position:absolute;
-		top:0; right:0; bottom:0; left:-150vw;
-		background-color:inherit;
-		z-index:0;
-		border:inherit;
-		border-radius:inherit;
-		box-shadow: inherit;
-	}
-}
-
-#survey-action-card {
-	.mat-chip-list .mat-chip:first-child {
-		@extend .offset-background;
-		&:before { z-index: -1;}
-	}
-	.mat-card {
-		@extend .offset-background;
-	}
+    #survey-action-card {
+        .mat-chip-list .mat-chip:first-child {
+            @extend .offset-background;
+            &:before { z-index: -1;}
+        }
+        .mat-card {
+            @extend .offset-background;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, UrlSegment} from '@angular/router';
 
 @Component({
     selector: 'app-page-resource',

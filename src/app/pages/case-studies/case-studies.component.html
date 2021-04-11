@@ -21,43 +21,49 @@
 	can hardcode in this fashion for now. -->
 	<div class="container padding-xl-top padding-lg-bottom">
 		<div class="row">
-			<div class="col-6 mb-5 theme-lightgreen">
+			<div class="col-6 mb-5 theme-lightpink offset-background h-100">
 				<app-resource
-					[tags]="['foo', 'bar']"
-					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Readme.md">
+					[tags]="['New!']"
+                    resourceLink="/case-studies/Readme"
+                    resourceIdentifier="Case%20Studies/Readme"
+                    [showActions]="false">
 				</app-resource>
 			</div>
-			<div class="col-6 mb-5 theme-lightgreen">
-				<app-resource
+			<div class="col-6 mb-5 theme-lightgreen h-100">
+                <app-resource
 					[tags]="['foo', 'bar']"
-					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Readme.md">
+                    title="Census Web"
+                    resourceLink="/case-studies/CensusWeb"
+                    resourceIdentifier="Case%20Studies/CensusWeb">
+				</app-resource>
+			</div>
+			<div class="col-12 theme-lightgreen">
+                <app-resource
+					[list]="true"
+					title="Computer Vision"
+					[tags]="['foo', 'bar']"
+                    resourceLink="/case-studies/ComputerVision"
+                    resourceIdentifier="Case%20Studies/ComputerVision">
 				</app-resource>
 			</div>
 			<div class="col-12 theme-lightgreen">
 				<app-resource
 					[list]="true"
-					title="Case Study Title"
+					title="NIHCase"
 					[tags]="['foo', 'bar']"
-					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Surveys.md">
+                    resourceLink="/case-studies/NIHCase"
+                    resourceIdentifier="Case%20Studies/NIHCase">
 				</app-resource>
 			</div>
 			<div class="col-12 theme-lightgreen">
 				<app-resource
 					[list]="true"
-					title="Case Study Title"
+					title="Surveys"
 					[tags]="['foo', 'bar']"
-					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Surveys.md">
-				</app-resource>
-			</div>
-			<div class="col-12 theme-lightgreen">
-				<app-resource
-					[list]="true"
-					title="Case Study Title"
-					[tags]="['foo', 'bar']"
-					markdownFileUrl="https://raw.githubusercontent.com/XDgov/MLBias/main/Case%20Studies/Surveys.md">
+                    resourceLink="/case-studies/Surveys"
+                    resourceIdentifier="Case%20Studies/Surveys">
 				</app-resource>
 			</div>
 		</div>
-
 	</div>
 </div>

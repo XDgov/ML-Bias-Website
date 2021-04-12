@@ -1,21 +1,19 @@
 <ng-template #navigation>
 
 </ng-template>
-<mat-toolbar color="primary">
-	<a mat-icon-button routerLink="/">
-        <app-icon-xd></app-icon-xd>
-        <span class="pl-3">Bias Toolkit</span>
-    </a>
+<mat-toolbar color="transparent" class="app-header">
+    <div class="app-menu">
+       <a class="app-logo" routerLink="/">
+            <span>Bias in AI Toolkit</span>
+        </a>
+        <button mat-button [matMenuTriggerFor]="menu" class="d-md-none">Menu</button>
+    	<mat-menu #menu="matMenu" color="transparent">
+            <a mat-menu-item routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
+    	</mat-menu>
+        <a routerLink="/case-studies" [routerLinkActive]="['current']"><span class="text">Case Studies</span></a>
+    	<a routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
+    </div>
     <div class="flex-fill"></div>
-    <button mat-button [matMenuTriggerFor]="menu" class="d-md-none">Menu</button>
-	<mat-menu #menu="matMenu" color="primary">
-        <a mat-menu-item routerLink="/home" [routerLinkActive]="['current']"><span class="text">Home</span></a>
-        <a mat-menu-item routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
-		<a mat-menu-item routerLink="/case-studies" [routerLinkActive]="['current']"><span class="text">Case Studies</span></a>
-	</mat-menu>
-    <a class="d-none d-md-block" mat-button routerLink="/home" [routerLinkActive]="['current']"><span class="text">Home</span></a>
-	<a class="d-none d-md-block" mat-button routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
-	<a class="d-none d-md-block" mat-button routerLink="/case-studies" [routerLinkActive]="['current']"><span class="text">Case Studies</span></a>
     <app-subscribe>
     </app-subscribe>
 </mat-toolbar>

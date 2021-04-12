@@ -8,8 +8,8 @@ export class GithubService {
         raw: 'https://raw.githubusercontent.com/XDgov/MLBias/main/',
     }
 	public resourceIdentifiers: any = {
-		learn: new Array("Books", "Datasets", "ExternalTooling", "FrameworkOverview", "Papers"),
-		build: new Array("BuildversusBuy", "Deployment_Retrain", "MachineLearningPipeline", "Model_Explainability", "Results_Interpretation"),
+		learn: new Array("Books"),
+		build: new Array("Beginner_DataTools", "Readme"),
 	};
     constructor() { }
 }

@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { GithubService } from 'src/app/services/github.service';
 
 @Component({
@@ -6,10 +6,10 @@ import { GithubService } from 'src/app/services/github.service';
     templateUrl:    './resource.component.html',
     styleUrls:      ['./resource.component.scss'],
 })
-export class ResourceComponent  {
+export class ResourceComponent implements OnInit {
     @HostBinding('class.list') @Input() list: boolean = false;
-    @HostBinding('class.d-none') hideCard: boolean = true;
-
+    @HostBinding('class.d-none') hideCard: boolean = false;
+    
     @Input() public title:string;
 	@Input() public tags:string[];
     @Input() public resourceIdentifier:string;
@@ -21,10 +21,11 @@ export class ResourceComponent  {
 
     constructor(
         public github: GithubService
-    ) {
-		if (this.markdownFileUrl || this.resourceIdentifier) {
-			this.hideCard = false;
-		}
-	}
+    ) {}
+
+    ngOnInit() {
+        if (this.markdownFileUrl) this.hideCard = true;
+        if (this.resourceIdentifier) this.hideCard = true;
+    }
     onReady = () => this.hideCard = false;
 }

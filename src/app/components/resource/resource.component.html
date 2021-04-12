@@ -15,11 +15,7 @@
 		<markdown *ngIf="markdownFileUrl" (ready)="onReady()" src="{{markdownFileUrl}}"></markdown>
 	</mat-card-content>
     <mat-card-actions *ngIf="showActions" class="text-right">
-        <button *ngIf="resourceLink" mat-raised-button mat-stroked-button routerLink="/resource/{{resourceLink}}">
-            <span>Open Resource</span>
-		</button>
-
-		<a *ngIf="markdownFileUrl" mat-raised-button mat-stroked-button href="{{markdownFileUrl}}">
+        <a *ngIf="resourceLink" mat-raised-button mat-stroked-button routerLink="{{resourceLink}}">
             <span>Open Resource</span>
 		</a>
     </mat-card-actions>

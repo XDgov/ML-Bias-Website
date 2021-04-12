@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {
 	// BuildPageComponent,
 	CaseStudiesPageComponent,
+    CaseStudyPageComponent,
 	// ContributePageComponent,
 	HomePageComponent,
 	// LearnPageComponent,
@@ -15,10 +16,12 @@ import {
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: 'home', component: HomePageComponent },
-	{ path: 'case-studies', component:  CaseStudiesPageComponent },
-	{ path: 'case-studies/:file', component: ResourcePageComponent },
-	{ path: 'resources', component: ResourcesPageComponent },
+	
+    { path: 'resources', component: ResourcesPageComponent },
     { path: 'resource/:intent/:level/:file', component: ResourcePageComponent },
+
+    { path: 'case-studies', component:  CaseStudiesPageComponent },
+	{ path: 'case-studies/:file', component: CaseStudyPageComponent },
 
 	// { path: 'quiz', component: SurveyPageComponent },
 	// { path: 'learn', component: LearnPageComponent },

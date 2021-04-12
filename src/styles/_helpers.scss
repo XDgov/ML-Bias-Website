@@ -42,3 +42,19 @@ $color_warn:$color_pink;
 	height:$icon_dimension !important;
 	line-height:$icon_dimension !important;
 }
+
+.offset-background {
+	position:relative;
+	> * { position:relative; z-index:1; }
+
+	&:before {
+		content:"";
+		position:absolute;
+		top:0; right:0; bottom:0; left:-150vw;
+		background-color:inherit;
+		z-index:0;
+		border:inherit;
+		border-radius:inherit;
+		box-shadow: inherit;
+	}
+}

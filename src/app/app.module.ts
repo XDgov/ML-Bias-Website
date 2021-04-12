@@ -29,12 +29,13 @@ import { SurveyLearnComponent } from './components/survey/learn/learn.component'
 
 import {
 	BuildPageComponent,
-	CaseStudiesPageComponent,
+	CaseStudiesPageComponent, CaseStudyPageComponent,
 	ContributePageComponent,
 	LearnPageComponent,
 	ResourcePageComponent,
 	SurveyPageComponent,
 } from './pages/';
+
 
 @NgModule({
 	bootstrap: [AppComponent],
@@ -55,7 +56,7 @@ import {
 		ResourceComponent,
 		BuildPageComponent,
 		ContributePageComponent,
-		CaseStudiesPageComponent,
+		CaseStudiesPageComponent, CaseStudyPageComponent,
 		LearnPageComponent,
 		ResourcePageComponent,
 		SurveyPageComponent,

@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<div class="resources-list container padding-xl-top padding-lg-bottom">
+		<div class="row">
+			<div class="resource action theme-lightpink offset-background col-md-6 col-lg-4 mb-5">
+				<app-resource
+					[tags]="['New!']"
+                    resourceLink="/case-studies/Readme"
+                    resourceIdentifier="Case%20Studies/Readme"
+                    [showActions]="false">
+				</app-resource>
+			</div>
+			<div class="resource highlight col-md-6 col-lg-8 mb-5 theme-lightgreen">
+                <app-resource
+					title="Census Web"
+					[tags]="['foo', 'bar']"
+                    resourceLink="/case-studies/CensusWeb">
+				</app-resource>
+			</div>
+			<div class="resource list theme-lightgreen col-12">
+                <app-resource
+					[list]="true"
+					title="Computer Vision"
+					[tags]="['foo', 'bar']"
+                    resourceLink="/case-studies/ComputerVision">
+				</app-resource>
+			</div>
+			<div class="resource list theme-lightgreen col-12">
+				<app-resource
+					[list]="true"
+					title="NIHCase"
+					[tags]="['foo', 'bar']"
+                    resourceLink="/case-studies/NIHCase">
+				</app-resource>
+			</div>
+			<div class="resource list theme-lightgreen col-12">
+				<app-resource
+					[list]="true"
+					title="Surveys"
+					[tags]="['foo', 'bar']"
+                    resourceLink="/case-studies/Surveys"
+                    resourceIdentifier="Case%20Studies/Surveys">
+				</app-resource>
+			</div>
+		</div>
+	</div>
+</div>

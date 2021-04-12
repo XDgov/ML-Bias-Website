@@ -1,6 +1,6 @@
 <!-- <div id="readme" class="resource col-md-6 col-lg-8 mb-5 theme-lightgreen">
 	<app-resource
-		markdownFile="{{ survey.intent }}/{{ survey.ai}}/Readme"
+		resourceIdentifier="{{ survey.intent }}/{{ survey.ai}}/Readme"
 		[classes]="['h-100', 'd-flex', 'flex-column']"
 		[tags]="[survey.intent, survey.ai]">
 	</app-resource>
@@ -14,7 +14,7 @@
 	<ng-template #surveyResultsText>Want to try again? Filter the resources on this page by taking our 60-second quiz</ng-template>
 	<ng-template #surveyResultsButton>Retake the Quiz</ng-template>
 
-	<div id="survey-action-card" class="resource theme-lightpink offset-background col-md-6 col-lg-4 mb-5">
+	<div class="resource action theme-lightpink offset-background col-md-6 col-lg-4 mb-5">
 		<mat-card>
 			<mat-card-header>
 				<mat-card-title>
@@ -42,7 +42,7 @@
 	</div>
 </ng-template>
 <ng-template #highlightCard>
-	<div id="highlight-card" class="resource col-md-6 col-lg-8 mb-5 theme-lightgreen">
+	<div class="resource highlight col-md-6 col-lg-8 mb-5 theme-lightgreen">
 		<mat-card>
 			<mat-card-header>
 				<mat-card-title>
@@ -69,8 +69,8 @@
 	</div>
 </ng-template>
 <ng-template #results>
-	<div *ngFor="let filename of markdownFiles[surveyData.intent]" class="resource list theme-lightgreen col-12">
-		<!-- markdownFile="{{survey.displayNames[surveyData.intent]}}/{{surveyData.ai}}/{{filename}}" -->
+	<div *ngFor="let filename of resourceIdentifiers[surveyData.intent]" class="resource list theme-lightgreen col-12">
+		<!-- resourceIdentifier="{{survey.displayNames[surveyData.intent]}}/{{surveyData.ai}}/{{filename}}" -->
 		<app-resource
 			[list]="true"
 			[tags]="[survey.displayNames[surveyData.intent]]"
@@ -79,16 +79,17 @@
 	</div>
 </ng-template>
 <ng-template #all>
-	<ng-container *ngFor="let topic of objectKeys(markdownFiles)">
+	<ng-container *ngFor="let topic of objectKeys(resourceIdentifiers)">
+        
 		<ng-container *ngFor="let level of survey.levels">
-			<div *ngFor="let filename of markdownFiles[topic]" class="resource list theme-lightgreen col-12 mb-3">
+			<div *ngFor="let filename of resourceIdentifiers[topic]" class="resource list theme-lightgreen col-12 mb-3">
 				<!-- NOTE: I am showing the filename as title while there is likely to be empty file content. 	-->
 				<!-- This, in combo with tags, allows us to see what resource we are are looking for. 			-->
 				<!-- Any title provided on this side should become unecessary once content is complete. 		-->
 				<app-resource
 					[list]="true"
 					[tags]="[displayNames[level], displayNames[topic]]"
-					markdownLink="{{ displayNames[topic] }}/{{ displayNames[level] }}/{{filename}}"
+					resourceLink="resource/{{ displayNames[topic] }}/{{ displayNames[level] }}/{{filename}}"
 					[title]="filename">
 				</app-resource>
 			</div>
@@ -97,13 +98,11 @@
 </ng-template>
 <div class="container-fluid">
 	<!-- full width -->
-
-
 	<section class="container">
 		<!-- max 1024 -->
 		<div id="resources" class="d-md-flex flex-wrap justify-content-evenly align-items-stretch">
-			<!-- <ng-template *ngIf="surveyActionCard; then surveyActionCard"></ng-template> -->
-			<!-- <ng-template *ngIf="highlightCard; then highlightCard"></ng-template> -->
+			<ng-template *ngIf="surveyActionCard; then surveyActionCard"></ng-template>
+			<ng-template *ngIf="highlightCard; then highlightCard"></ng-template>
 			<ng-container *ngIf="surveyData; then results; else all"></ng-container>
 		</div>
 	</section>

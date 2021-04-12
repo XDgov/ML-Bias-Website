@@ -17,11 +17,11 @@
 	<mat-sidenav-content class="mat-app-background">
 		<div class="overflow-auto">
 			<div class="row">
-				<div *ngFor="let filename of markdownFiles" class="resource list theme-lightgreen col-md-6 col-lg-4 mb-5">
+				<div *ngFor="let filename of resourceIdentifiers" class="resource list theme-lightgreen col-md-6 col-lg-4 mb-5">
 					<!--  -->
 					<app-resource
 						[tags]="['tag']"
-						markdownFile="Build/{{ survey.data.ai }}/{{thing}}_{{ filename }}"
+						resourceIdentifier="Build/{{ survey.data.ai }}/{{thing}}_{{ filename }}"
 						title="Build/{{ survey.data.ai }}/{{thing}}_{{ filename }}">
 					</app-resource>
 				</div>

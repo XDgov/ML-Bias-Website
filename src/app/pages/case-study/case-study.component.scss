@@ -1,0 +1,23 @@
+@import "../../../styles/helpers";
+
+:host {
+	flex-grow:1;
+	position:relative;
+
+	// > * {
+	// 	position:relative;
+	// 	z-index:10;
+	// }
+
+	// &:before {
+	// 	content:"";
+	// 	display:block;
+	// 	position:absolute;
+	// 	top:0; right:0; bottom:auto; left:10vw;
+	// 	z-index:0;
+	// 	width:20vw; height:50vh;
+	// 	background:$color_lightpink;
+
+	// 	//@extend .mat-elevation-z#{'8'} ;
+	// }
+}

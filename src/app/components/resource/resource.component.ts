@@ -9,17 +9,14 @@ import { GithubService } from 'src/app/services/github.service';
 export class ResourceComponent implements OnInit {
     @HostBinding('class.list') @Input() list: boolean = false;
     @HostBinding('class.d-none') hideCard: boolean = false;
-
+    
     @Input() public title:string;
 	@Input() public tags:string[];
     @Input() public resourceIdentifier:string;
 	@Input() public resourceLink:string;
 
-	@Input() public theme:string = "theme-light"
-	@Input() public actionTheme:string = "theme-light"
-
 	@Input() public markdownFileUrl:string;
-	@Input() public class:string = "";
+	@Input() public classes:string[] = [];
     @Input() public showActions:boolean = true;
 
     constructor(

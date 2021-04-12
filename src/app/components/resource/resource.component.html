@@ -1,6 +1,6 @@
 <ng-template #listTitle><h3 class="font-accent font-weight-bold">{{ title }}</h3></ng-template>
 <ng-template #cardTitle><h2><span class="mat-body-1">{{ title }}</span></h2></ng-template>
-<mat-card class="{{ class }}">
+<mat-card class="{{ classes.join(' ') }}">
 	<mat-card-header>
         <mat-card-title *ngIf="title">
             <ng-container *ngIf="!list; then cardTitle"></ng-container>
@@ -14,10 +14,9 @@
         <markdown *ngIf="resourceIdentifier" (ready)="onReady()" src="{{github.entryPoints.raw}}{{resourceIdentifier}}.md"></markdown>
 		<markdown *ngIf="markdownFileUrl" (ready)="onReady()" src="{{markdownFileUrl}}"></markdown>
 	</mat-card-content>
-    <mat-card-actions *ngIf="showActions" class="text-right {{ actionTheme }}">
-        <a *ngIf="resourceLink" routerLink="{{resourceLink}}" mat-raised-button mat-stroked-button>
-            <span class="text-warn">Open Resource</span>
-			<mat-icon class="round thick-border" color="warn"><app-icon-next></app-icon-next></mat-icon>
+    <mat-card-actions *ngIf="showActions" class="text-right">
+        <a *ngIf="resourceLink" mat-raised-button mat-stroked-button routerLink="{{resourceLink}}">
+            <span>Open Resource</span>
 		</a>
     </mat-card-actions>
 </mat-card>

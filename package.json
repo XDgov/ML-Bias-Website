@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "deploy-staging": "ng deploy --base-href=/ML-Bias-Website/ --cname=xdgov.github.io --branch=staging",
+    "deploy-staging": "ng deploy --base-href=/ML-Bias-Website/ --build-target=staging --cname=xdgov.github.io --branch=staging",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

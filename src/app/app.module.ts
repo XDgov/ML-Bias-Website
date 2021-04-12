@@ -15,6 +15,8 @@ import { JourneyPageComponent } from './pages/journey/journey.component';
 import { ResourcesPageComponent } from './pages/resources/resources.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { environment } from '../environments/environment';
+
 import { DialogComponent } from './components/dialog/dialog.component';
 import {
 	NextIconComponent,
@@ -74,7 +76,7 @@ import {
 	],
 	providers: [
 		FormBuilder,
-		{ provide: APP_BASE_HREF, useValue: "/" }
+		{ provide: APP_BASE_HREF, useValue: environment.baseHref }
 	],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

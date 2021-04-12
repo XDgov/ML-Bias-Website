@@ -37,10 +37,37 @@
               "src/styles.scss"
             ],
             "scripts": [
-                "node_modules/marked/lib/marked.js"
+              "node_modules/marked/lib/marked.js"
             ]
           },
           "configurations": {
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -58,13 +85,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
                 }
               ]
             }
@@ -76,6 +103,9 @@
             "browserTarget": "bias-in-ai:build"
           },
           "configurations": {
+            "staging": {
+              "browserTarget": "bias-in-ai:build:staging"
+            },
             "production": {
               "browserTarget": "bias-in-ai:build:production"
             }
@@ -102,7 +132,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-                "node_modules/marked/lib/marked.js"
+              "node_modules/marked/lib/marked.js"
             ]
           }
         },
@@ -126,10 +156,17 @@
             "devServerTarget": "bias-in-ai:serve"
           },
           "configurations": {
+            "staging": {
+              "devServerTarget": "bias-in-ai:serve:staging"
+            },
             "production": {
               "devServerTarget": "bias-in-ai:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

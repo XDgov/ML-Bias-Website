@@ -1,4 +1,4 @@
 export const environment = {
-  baseHref: '/',
+  baseHref: '/ML-Bias-Website/',
   production: true
 };

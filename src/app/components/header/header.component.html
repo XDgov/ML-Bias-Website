@@ -1,6 +1,3 @@
-<ng-template #navigation>
-
-</ng-template>
 <mat-toolbar color="transparent" class="app-header">
     <div class="app-menu">
        <a class="app-logo" routerLink="/">
@@ -8,6 +5,7 @@
         </a>
         <button mat-button [matMenuTriggerFor]="menu" class="d-md-none">Menu</button>
     	<mat-menu #menu="matMenu" color="transparent">
+
             <a mat-menu-item routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
     	</mat-menu>
         <a routerLink="/case-studies" [routerLinkActive]="['current']"><span class="text">Case Studies</span></a>

@@ -14,6 +14,7 @@ import { HomePageComponent } from './pages/home/home.component';
 import { JourneyPageComponent } from './pages/journey/journey.component';
 import { ResourcesPageComponent } from './pages/resources/resources.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
 
 import { environment } from '../environments/environment';
 
@@ -49,6 +50,7 @@ import {
 		HomePageComponent,
 		JourneyPageComponent,
 		ResourcesPageComponent,
+		SubscribeComponent,
 		XdIconComponent,
 		DialogComponent,
 		SurveyComponent, SurveyBuildComponent, SurveyLearnComponent,

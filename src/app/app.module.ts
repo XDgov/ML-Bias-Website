@@ -1,9 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule, FormBuilder }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MarkdownModule } from 'ngx-markdown';
 
+import { APP_BASE_HREF } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './modules/material.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { HomePageComponent } from './pages/home/home.component';
 import { JourneyPageComponent } from './pages/journey/journey.component';
 import { ResourcesPageComponent } from './pages/resources/resources.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { environment } from '../environments/environment';
 
 import { DialogComponent } from './components/dialog/dialog.component';
 import {
@@ -73,6 +76,7 @@ import {
 	],
 	providers: [
 		FormBuilder,
+		{ provide: APP_BASE_HREF, useValue: environment.baseHref }
 	],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

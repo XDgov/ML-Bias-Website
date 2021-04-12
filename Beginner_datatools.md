@@ -79,10 +79,10 @@ Given a reference population of 36-50, the cohorts 51+ and 19-35 clearly fall wi
 
 
 
-Other methods can be walked through and executed in our Python fairness [Jupyer notebooks](http://jupyter.org); see below for an example of a fairness exercise assessing the fairness and bias in a dataset of grant applicants from different geographic groups.
+Other methods can be walked through and executed in our Python fairness [Jupyer notebooks](http://jupyter.org); see below for an example of a fairness exercise assessing the bias in a dataset of grant applicants from different geographic groups.
 
 
-
+ ![Grant Application Sample Data Debiasing](https://github.com/s-hosseini/Staging/blob/main/55cpl7.gif)
 
 
 To see how Census uses some of these techniques to combat data bias that distort survey results, read about how the US Census is addressing data bias Commodity Flows survey here [ADD LINK]. 

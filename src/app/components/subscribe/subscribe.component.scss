@@ -1,0 +1,30 @@
+@import "../../../styles/helpers";
+
+button {
+  background-color: $color_magenta;
+  border: 0;
+  border-radius: 30px;
+  color: $white;
+  font-weight: 700;
+  margin-left: 1rem;
+  outline: 0;
+  padding: 1.2rem 1.5rem;
+}
+
+form {
+  line-height: 0;
+  margin-top: 0;
+}
+
+input {
+  border: 0;
+  border-radius: 30px;
+  display: inline-block;
+  min-width: 200px;
+  outline: 0;
+  padding: 1rem 1.5rem;
+
+  ::placeholder {
+    color: #CCC;
+  }
+}

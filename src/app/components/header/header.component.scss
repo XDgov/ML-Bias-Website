@@ -16,3 +16,37 @@ a, .mat-button {
 		}
 	}
 }
+
+.app-header {
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.app-menu {
+	font-size: 14px;
+
+	a {
+		color: #333;
+		margin-right: 32px;
+		text-decoration: none;
+
+		&:hover {
+			border-bottom: 4px solid $color_teal;
+		}
+
+		&.app-logo {
+			color: $color_magenta;
+			margin-right: 64px;
+
+		}
+	}
+}
+
+.app-name {
+	display: flex;
+	margin-left: 1rem;
+	text-decoration: none;
+}

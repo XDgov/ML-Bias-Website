@@ -37,6 +37,10 @@ $color_warn:$color_pink;
 	background-color:rgba($color_purple, 0.77);
 }
 
+.shadow_sm {
+  box-shadow: 0 4px 7px 0px rgba(0,0,0,0.19);
+}
+
 @mixin iconSizer($icon_dimension:$icon-font-size) {
 	box-sizing:content-box;
 	font-size:$icon-font-size !important;

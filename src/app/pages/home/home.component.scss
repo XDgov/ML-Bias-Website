@@ -1,35 +1,36 @@
 @import '../../../styles/helpers';
 
+.app-banner {
+
+  h1 {
+    font-size: 72px;
+    font-weight: 900;
+    margin-top: 0;
+    max-width: 650px;
+  }
+}
+
+.app-banner__content {
+  padding: 0 64px;
+
+  p {
+    font-size: 20px;
+    line-height: 36px;
+  }
+}
+
+.app-banner__tagline {
+  color: #AAA;
+  font-size: 14px !important;
+  margin: 0;
+  line-height: 0;
+  padding-top: 16px;
+}
+
 #toolkit {
-    overflow:hidden;
-    // @media only screen and (max-width:691px) {
-    //     position:relative;
-    //     &:after {
-    //         content:"";
-    //         position:absolute;
-    //         top:0; right:0; bottom:0; left:0;
-    //         background-image:url(/assets/wireframeface.png);
-    //         background-repeat:no-repeat;
-    //         background-size:auto 50%;
-    //         background-position:-50% bottom;
-    //     }
-    // }
-	.decoration {
-        position:relative;
-		background-image:url('^assets/wireframeface.png');
-		background-repeat:no-repeat;
-		background-size:contain;
-		background-position:center center;
+  overflow:hidden;
+}
 
-        &:after {
-			content: "";
-			position:absolute;
-			top:auto; right:auto; bottom:0; left:90%;
-			width:100vw; height:49px;
-			background: transparent;
-			background-image: radial-gradient(white 2px, transparent 0);
-			background-size: 7px 7px;
-
-		}
-	}
+.lg-padding {
+  padding: 150px 0;
 }

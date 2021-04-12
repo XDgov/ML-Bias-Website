@@ -80,16 +80,18 @@
 </ng-template>
 <ng-template #all>
 	<ng-container *ngFor="let topic of objectKeys(resourceIdentifiers)">
-        
+
 		<ng-container *ngFor="let level of survey.levels">
-			<div *ngFor="let filename of resourceIdentifiers[topic]" class="resource list theme-lightgreen col-12 mb-3">
+			<div *ngFor="let filename of resourceIdentifiers[topic]" class="resource list col-12 mb-3">
 				<!-- NOTE: I am showing the filename as title while there is likely to be empty file content. 	-->
 				<!-- This, in combo with tags, allows us to see what resource we are are looking for. 			-->
 				<!-- Any title provided on this side should become unecessary once content is complete. 		-->
 				<app-resource
+					class="theme-lightgreen"
+					actionTheme="text-warn"
 					[list]="true"
 					[tags]="[displayNames[level], displayNames[topic]]"
-					resourceLink="resource/{{ displayNames[topic] }}/{{ displayNames[level] }}/{{filename}}"
+					resourceLink="/resource/{{ displayNames[topic] }}/{{ displayNames[level] }}/{{filename}}"
 					[title]="filename">
 				</app-resource>
 			</div>

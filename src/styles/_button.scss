@@ -24,14 +24,14 @@ html body {
 			mat-icon { @include iconSizer($icon_dimension:2.8rem); }
 		}
 
-		&:hover .mat-button-wrapper .mat-icon {
+		&:hover .mat-button-wrapper .mat-icon#NOPE {
 			color:white !important;
 			&[color=primary] { background-color:$color_primary !important;  }
 			&[color=accent] { background-color:$color_accent !important; }
 			&[color=warn] { background-color:$color_warn !important; }
 		}
 
-		&.mat-mini-fab {
+		&.mat-mini-fab#NOPE {
 			@include iconSizer($icon_dimension:$icon-font-size);
 			.mat-button-wrapper { padding:0; }
 			.mat-icon { border-radius:100vw; }

@@ -32,22 +32,22 @@ $theme-background-light: (
 	selected-button:			map-get($light-background, selected-button),
 	selected-disabled-button:	map-get($light-background, selected-disabled-button),
 	disabled-button-toggle:		map-get($light-background, disabled-button-toggle),
-	unselected-chip:			rgba(white, 0),
+	unselected-chip:			$color_lightgreen,
 	disabled-list-option:		map-get($light-background, disabled-list-option),
 	tooltip: 					map-get($light-background, tooltip),
 );
 $theme-foreground-light: (
 	base:				map-get($light-foreground, base),
-	divider:			map-get($md-purple, 500),
-	dividers:			map-get($md-purple, 500),
+	divider:			map-get($md-pink, 500),
+	dividers:			map-get($md-pink, 500),
 	disabled:			map-get($light-foreground, disabled),
 	disabled-button:  	map-get($light-foreground, disabled-button),
 	disabled-text:		map-get($light-foreground, disabled-text),
 	elevation:			map-get($light-foreground, elevation),
 	hint-text:			map-get($light-foreground, hint-text),
 	secondary-text:		map-get($light-foreground, secondary-text),
-	icon:				$color_green,
-	icons:				$color_green,
+	icon:				map-get($md-pink, 500),
+	icons:				map-get($md-pink, 500),
 	text:				map-get($light-foreground, text),
 	slider-min:			map-get($light-foreground, slider-min),
 	slider-off:			map-get($light-foreground, slider-off),
@@ -74,28 +74,9 @@ html {
 	body { max-width:100%; max-height:100%; }
 }
 
-html body .padding-lg-top  		{ padding-top:7rem }
-html body .padding-lg-right		{ padding-right:7rem }
-html body .padding-lg-bottom	{ padding-bottom:7rem }
-html body .padding-lg-left  	{ padding-left:7rem }
-
-html body .padding-xl-top  		{ padding-top:10rem }
-html body .padding-xl-right  	{ padding-right:10rem }
-html body .padding-xl-bottom  	{ padding-bottom:10rem }
-html body .padding-xl-left  	{ padding-left:10rem }
-
 @for $i from 1 to 100 {
     .w-#{$i} { width: #{$i}#{'%'} }
 	.mw-#{$i} { width: #{$i}#{'%'} }
-    // @media only screen and (max-width: 400px) {
-    //     .w-sm-#{$i} { width: #{$i}#{'%'} }
-    // }
-    // @media only screen and (min-width:401px) and (max-width: 768px) {
-    //     .w-md-#{$i} { width: #{$i}#{'%'} }
-    // }
-    // @media only screen and (min-width: 769px) {
-    //     .w-lg-#{$i} { width: #{$i}#{'%'} }
-    // }
 }
 @import "decorations";
 html body {

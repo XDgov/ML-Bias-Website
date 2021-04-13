@@ -4,7 +4,6 @@ $color_darkblue:#384259;
 $pink-theme-primary:	mat-palette($md-darkblue);
 $pink-theme-accent:		mat-palette($md-green);
 $pink-theme-warn:		mat-palette($md-lightpink);
-
 $pink-theme: mat-light-theme((
 	color: (
 		 primary:	$pink-theme-primary,
@@ -16,16 +15,16 @@ $pink-theme-foreground: map-get($pink-theme, foreground);
 $pink-theme-background: map-get($pink-theme, background);
 $theme-foreground-lightpink: (
 	base:				$color_darkblue,
-	divider:			map-get($md-pink, 500),
-	dividers:			map-get($md-pink, 500),
+	divider:			$color_lightpink,
+	dividers:			$color_lightpink,
 	disabled:			map-get($pink-theme-foreground, disabled),
 	disabled-button:  	map-get($pink-theme-foreground, disabled-button),
 	disabled-text:		map-get($pink-theme-foreground, disabled-text),
 	elevation:			map-get($pink-theme-foreground, elevation),
 	hint-text:			map-get($pink-theme-foreground, hint-text),
 	secondary-text:		map-get($pink-theme-foreground, secondary-text),
-	icon:				map-get($md-pink, 500),
-	icons:				map-get($md-pink, 500),
+	icon:				$color_pink,
+	icons:				$color_pink,
 	text:				map-get($pink-theme-foreground, text),
 	slider-min:			map-get($pink-theme-foreground, slider-min),
 	slider-off:			map-get($pink-theme-foreground, slider-off),

@@ -6,7 +6,7 @@ html body {
 
 		&.mat-button-base { @extend .mat-elevation-z8; }
 
-		border-radius:$border-radius;
+		border-radius:50vw;
 		min-height:$button-height;
 		line-height:$button-height;
 		padding-right: 2.4rem;

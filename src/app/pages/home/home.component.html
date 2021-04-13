@@ -1,8 +1,8 @@
 <section id="toolkit" class="content-fluid theme-gradient border-bottom p-0">
 	<div class="container">
 		<div class="row">
-			<div class="bg-white offset-background col-md-7 padding-xl-top padding-lg-bottom">
-				<div class="padding-lg-top padding-lg-right">
+			<div class="bg-white offset-background col-md-7 padding-xl-top padding-lg-bottom ">
+				<div class="padding-lg-top padding-lg-right  position-relative">
 					<p class="mat-caption dec-line pink top left offset-top">
 						<span class="text-muted">Learn • Build • Improve</span>
 					</p>
@@ -22,6 +22,24 @@
 						</span>
 						<mat-icon class="round bg-warn text-light"><app-icon-next></app-icon-next></mat-icon>
 					</a>
+					<div id="highlightButtons" class="theme-lightgreen position-absolute padding-xl-top padding-xl-bottom">
+						<div class="padding-lg-bottom">
+							<a	routerLink="/resources"
+								mat-raised-button mat-stroked-button
+								class="d-inline-block border-0 mb-5">
+								<mat-icon class="round bg-accent text-light"><app-icon-next></app-icon-next></mat-icon>
+								<span class="text-dark">Use Cases in Government</span>
+							</a>
+						</div>
+						<div class="padding-lg-left padding-xl-top">
+							<a	routerLink="/resources"
+								mat-raised-button mat-stroked-button
+								class="d-inline-block border-0">
+								<mat-icon class="round bg-accent text-light"><app-icon-next></app-icon-next></mat-icon>
+								<span class="text-dark">Practical Resources</span>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -29,7 +47,7 @@
 </section>
 <section class="container-fluid bg-white border-top">
     <div class="container">
-        <div class="d-flex justify-content-start">
+        <div class="d-flex justify-content-start position-relative">
             <div class="col-md-8">
                 <h2 class=" dec-line green top left offset-top">Join the Community</h2>
                 <p class="mat-body-2">

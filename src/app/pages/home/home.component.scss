@@ -1,16 +1,16 @@
 @import '../../../styles/helpers';
-
-
 section {
 	@extend .padding-xl-top;
 	@extend .padding-xl-bottom;
+}
+
+#highlightButtons {
+	top:auto; right:auto; bottom:0; left:95%;
 }
 #popular {
 	.resources {
 		display: grid;
 		grid-template-columns:1fr 1fr 1fr;
-
 		column-gap:2rem;
-  		// row-gap: <line-size>;
 	}
 }

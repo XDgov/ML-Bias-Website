@@ -1,16 +1,17 @@
-<mat-toolbar color="transparent" class="app-header">
-    <div class="app-menu">
-       <a class="app-logo" routerLink="/">
-            <span>Bias in AI Toolkit</span>
-        </a>
-        <button mat-button [matMenuTriggerFor]="menu" class="d-md-none">Menu</button>
-    	<mat-menu #menu="matMenu" color="transparent">
+<mat-toolbar>
+	<a mat-button class="home mat-body-1" routerLink="/home" [routerLinkActive]="['current']">
+		<span>Bias in AI Toolkit</span>
+	</a>
+	<!-- the commented code below represents a mobile menu, hiding it for now to avoid confusion -->
+	<!--
+		<button mat-button [matMenuTriggerFor]="menu" class="d-md-none">Menu</button>
+		<mat-menu #menu="matMenu" color="transparent">
 
-            <a mat-menu-item routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
-    	</mat-menu>
-        <a routerLink="/case-studies" [routerLinkActive]="['current']"><span class="text">Case Studies</span></a>
-    	<a routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
-    </div>
+			<a mat-menu-item routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
+		</mat-menu>
+	-->
+	<a mat-button routerLink="/case-studies" [routerLinkActive]="['current']"><span class="text">Case Studies</span></a>
+	<a mat-button routerLink="/resources" [routerLinkActive]="['current']"><span class="text">Resources</span></a>
     <div class="flex-fill"></div>
     <app-subscribe>
     </app-subscribe>

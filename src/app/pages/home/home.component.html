@@ -1,83 +1,80 @@
-<section id="toolkit" class="content-fluid theme-gradient">
+<section id="toolkit" class="content-fluid theme-gradient border-bottom p-0">
 	<div class="container">
 		<div class="row">
-			<div class="bg-white offset-background col-md-6 padding-xl-top padding-lg-bottom">
+			<div class="bg-white offset-background col-md-7 padding-xl-top padding-lg-bottom">
 				<div class="padding-lg-top padding-lg-right">
 					<p class="mat-caption dec-line pink top left offset-top">
 						<span class="text-muted">Learn • Build • Improve</span>
 					</p>
 					<h1 class="mat-display-4">
-						Combating Bias in AI Toolkit
+						Combating Bias Toolkit
 					</h1>
 					<p class="mat-subheading-1">
 						From fundamentals to advanced topics, this toolkit helps
 						teams in government understand and mitigate bias in their
 						data and algorithms.
 					</p>
-					<a
-						class="d-inline-block mt-5"
+					<a class="d-inline-block mt-5"
 						mat-raised-button mat-stroked-button
 						routerLink="/resources">
-							<span>Get started</span>
-							<mat-icon color="accent" class="round thick-border"><app-icon-next></app-icon-next></mat-icon>
+						<span class="text-warn">
+							Get started
+						</span>
+						<mat-icon class="round bg-warn text-light"><app-icon-next></app-icon-next></mat-icon>
 					</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<section class="container-fluid padding-lg-top padding-lg-bottom mat-app-background mat-typography">
+<section class="container-fluid bg-white border-top">
     <div class="container">
-        <div class="d-flex justify-content-end">
-            <div class="col-md-8 top left offset-top offset-left">
-                <h2>Join the Community</h2>
-                <p class="mat-subheading-1 dec-line green top left offset-left">
+        <div class="d-flex justify-content-start">
+            <div class="col-md-8">
+                <h2 class=" dec-line green top left offset-top">Join the Community</h2>
+                <p class="mat-body-2">
                     Join a community of enthusiasts and practitioners working to
                     build more equitable AI/ML for the communities we serve.
                 </p>
-                <a
-						class="d-inline-block mt-5"
-						mat-raised-button mat-stroked-button
-						routerLink="/Resources">
-                    <span>Join the Community Slack</span>
-                    <mat-icon color="accent" class="round thick-border"><app-icon-next></app-icon-next></mat-icon>
+                <a	routerLink="/resources"
+					mat-raised-button mat-stroked-button
+					class="d-inline-block mt-5">
+					<span class="text-warn">Join the Community Slack</span>
+                    <mat-icon class="round bg-warn text-light"><app-icon-next></app-icon-next></mat-icon>
                 </a>
             </div>
         </div>
     </div>
 </section>
-<section class="container-fluid pt-5 pb-5 theme-medium mat-app-background mat-typography">
-    <div class="container">
-        <h3 class="dec-line pink mb-5 bottom left offset-bottom ">Featured Resources</h3>
-        <div class="resources d-flex flex-wrap pt-5 align-items-stretch mb-5">
-			<div class="col-md-6 col-lg-4 flex-column mb-5  theme-lightpink">
-				<!-- This pulls & displays Case Studies/Readme.md but links to the website /case-studies page -->
-				<app-resource
-					[tags]="['foo', 'bar']"
-                    resourceLink="/case-studies"
-                    resourceIdentifier="Case%20Studies/Readme">
-				</app-resource>
-			</div>
-			<div class="col-md-6 col-lg-8 flex-column mb-5 list theme-lightgreen">
-				<div class="mb-3">
-					<!-- Pulling in a resource via identifer (TOPIC/LEVEL/FILENAME) -->
-					<app-resource
-						[list]="true"
-						[tags]="['foo', 'bar']"
-						resourceLink="/Learn/Beginner/Readme"
-						resourceIdentifier="/Learn/Beginner/Readme">
-					</app-resource>
-				</div>
-				<div class="mb-3">
-					<!-- This links a case study locally but displays nothing here, with a manually added card title -->
-					<app-resource
-						title="Manually Set a Title"
-						[list]="true"
-						[tags]="['foo', 'bar']"
-						resourceLink="/case-studies/Readme">
-					</app-resource>
-				</div>
-			</div>
+<section class="container-fluid">
+    <div id="popular" class="container">
+        <h3 class="dec-line pink mb-5 top left offset-top">
+			Popular Resources
+		</h3>
+        <div class="resources">
+			<app-resource
+				class="h-100"
+				title="Starter Guide"
+				[tags]="['Techniques']"
+				resourceLink="/case-studies/Surveys">
+				<!-- This _should maybe_  be trucated markdown, but for purposes of brevity we are manually inserting content here for now -->
+				<p>Get started with an intoduction to major concepts in bias and AI.</p>
+			</app-resource>
+			<app-resource
+				class="h-100"
+				title="Case Studies: Bias In Surveys"
+				[tags]="['Techniques']"
+				resourceLink="/case-studies/Surveys">
+				<p>This case study by the US Census outlines ways to debias data.</p>
+			</app-resource>
+
+			<app-resource
+				title="Data Tools"
+				class="h-100"
+				[tags]="['Techniques']"
+				resourceLink="/case-studies/Readme">
+				<p>This resource covers some basics in sources of bias in data and provides ways to address them.</p>
+			</app-resource>
         </div>
     </div>
 </section>

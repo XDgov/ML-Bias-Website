@@ -1,1 +1,16 @@
 @import '../../../styles/helpers';
+
+
+section {
+	@extend .padding-xl-top;
+	@extend .padding-xl-bottom;
+}
+#popular {
+	.resources {
+		display: grid;
+		grid-template-columns:1fr 1fr 1fr;
+
+		column-gap:2rem;
+  		// row-gap: <line-size>;
+	}
+}

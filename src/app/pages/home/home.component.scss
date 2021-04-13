@@ -1,36 +1,16 @@
 @import '../../../styles/helpers';
-
-.app-banner {
-
-  h1 {
-    font-size: 72px;
-    font-weight: 900;
-    margin-top: 0;
-    max-width: 650px;
-  }
+section {
+	@extend .padding-xl-top;
+	@extend .padding-xl-bottom;
 }
 
-.app-banner__content {
-  padding: 0 64px;
-
-  p {
-    font-size: 20px;
-    line-height: 36px;
-  }
+#highlightButtons {
+	top:auto; right:auto; bottom:0; left:95%;
 }
-
-.app-banner__tagline {
-  color: #AAA;
-  font-size: 14px !important;
-  margin: 0;
-  line-height: 0;
-  padding-top: 16px;
-}
-
-#toolkit {
-  overflow:hidden;
-}
-
-.lg-padding {
-  padding: 150px 0;
+#popular {
+	.resources {
+		display: grid;
+		grid-template-columns:1fr 1fr 1fr;
+		column-gap:2rem;
+	}
 }

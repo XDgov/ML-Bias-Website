@@ -21,9 +21,6 @@ export class BuildPageComponent {
 	) {
 		if (this.survey.data.ai === "Intermediate") this.thing = "Intermed";
 		else this.thing = this.survey.data.ai;
-
-
-	 	this.mainContent.classes.push('contain', 'main-overflow-hidden');
-	// 	console.log(this.mainContent.classes)
+	 	this.mainContent.siteContainerClasses.push('contain', 'main-overflow-hidden');
 	}
 }

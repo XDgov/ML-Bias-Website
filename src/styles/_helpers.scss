@@ -1,3 +1,4 @@
+
 @import 'palettes';
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/scss/mixins';
@@ -12,6 +13,7 @@ $icon-font-size:3.2rem;
 
 $color_magenta: #AB30AB;
 $color_teal: #13E1BF;
+$color_lightgreen: map-get($md-lightgreen, 500);
 $color_purple: map-get($md-purple, 500);
 $color_pink: map-get($md-pink, 500);
 $color_green: map-get($md-green, 500);
@@ -40,6 +42,27 @@ $color_warn:$color_pink;
 .shadow_sm {
   box-shadow: 0 4px 7px 0px rgba(0,0,0,0.19);
 }
+
+@for $i from 1 to 100 {
+	$negative-margin:#{$i * -1}#{'px'};
+    .neg-mt-#{$i} { margin-top:$negative-margin; }
+	.neg-mr-#{$i} { margin-right:$negative-margin; }
+	.neg-mb-#{$i} { margin-bottom:$negative-margin; }
+	.neg-ml-#{$i} { margin-left:$negative-margin; }
+}
+
+@for $i from 1 to 100 { .zIndex-#{$i} { z-index:$i; } }
+
+.padding-lg-top  	{ padding-top:7rem }
+.padding-lg-right	{ padding-right:7rem }
+.padding-lg-bottom	{ padding-bottom:7rem }
+.padding-lg-left  	{ padding-left:7rem }
+
+.padding-xl-top  	{ padding-top:10rem }
+.padding-xl-right  	{ padding-right:10rem }
+.padding-xl-bottom  { padding-bottom:10rem }
+.padding-xl-left  	{ padding-left:10rem }
+
 
 @mixin iconSizer($icon_dimension:$icon-font-size) {
 	box-sizing:content-box;

@@ -21,7 +21,7 @@ $light-background: map-get($light-theme, background);
 
 $theme-background-light: (
 	status-bar:					map-get($light-background, status-bar),
-	app-bar:					map-get($light-background, app-bar),
+	app-bar:					rgba(white, 0),
 	background:				   	white,
 	hover:	 					white,
 	card:	   					map-get($light-background, card),
@@ -57,6 +57,7 @@ $theme-foreground-light: (
 .theme-light { @import "./themes/light"; }
 .theme-dark { @import "./themes/dark"; }
 .theme-medium { @import "./themes/medium"; }
+.theme-purple { @import "./themes/purple"; }
 .theme-lightpink { @import "./themes/lightpink"; }
 .theme-lightgreen { @import "./themes/lightgreen"; }
 
@@ -150,7 +151,7 @@ html body .mat-slider-thumb {
 .resources-list {
 	.resource {
 		@extend .flex-column;
-		
+
         &.action {
             .mat-chip-list .mat-chip:first-child {
                 @extend .offset-background;
@@ -184,8 +185,8 @@ html body .mat-slider-thumb {
             }
         }
 	}
-    
-    
+
+
 	.mat-card {
         overflow:hidden;
         mat-card-content { overflow:hidden; }

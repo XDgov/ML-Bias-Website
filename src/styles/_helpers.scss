@@ -41,6 +41,18 @@ $color_warn:$color_pink;
   box-shadow: 0 4px 7px 0px rgba(0,0,0,0.19);
 }
 
+@for $i from 1 to 100 {
+	$negative-margin:#{$i * -1}#{'px'};
+    .neg-mt-#{$i} { margin-top:$negative-margin; }
+	.neg-mr-#{$i} { margin-right:$negative-margin; }
+	.neg-mb-#{$i} { margin-bottom:$negative-margin; }
+	.neg-ml-#{$i} { margin-left:$negative-margin; }
+}
+
+@for $i from 1 to 100 {
+	.zIndex-#{$i} { z-index:$i; }
+}
+
 @mixin iconSizer($icon_dimension:$icon-font-size) {
 	box-sizing:content-box;
 	font-size:$icon-font-size !important;
